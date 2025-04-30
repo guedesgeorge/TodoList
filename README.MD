@@ -1,61 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.10</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>br.com.georgeguedes</groupId>
-	<artifactId>todolist</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>todolist</name>
-	<description>Gerenciador de tarefas</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+# 📝 To-Do List em Java
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+Este projeto é uma aplicação de **lista de tarefas (To-Do List)** desenvolvida em **Java**, com persistência de dados em um **banco de dados online**. O objetivo principal é permitir que usuários possam cadastrar, listar, atualizar e remover tarefas de forma simples e prática.
 
-     <dependency>
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-		<version>1.18.34</version>
-		<scope>provided</scope>
-	</dependency>
-	</dependencies>
+## 🚀 Funcionalidades
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+- ✅ Adicionar nova tarefa  
+- 📋 Listar todas as tarefas  
+- ✏️ Editar uma tarefa existente  
+- ❌ Remover uma tarefa  
+- 🗃️ Armazenamento de dados persistente usando banco de dados online
 
-</project>
+## 🛠️ Tecnologias Utilizadas
+
+- **Java** (JDK 8+)
+- **JDBC** (Java Database Connectivity)
+- **Banco de Dados Online** (Ex: PostgreSQL com ElephantSQL, PlanetScale, Render, etc.)
+- **IDE**: IntelliJ IDEA / Eclipse / VS Code
+
+## 🧱 Estrutura do Projeto
+
+- `Tarefa.java` – Classe que representa a entidade tarefa (id, descrição, status, data de criação)
+- `TarefaDAO.java` – Classe responsável pelas operações no banco de dados (CRUD)
+- `Conexao.java` – Responsável pela conexão com o banco de dados online
+- `Main.java` – Interface simples no console para interação com o usuário
+
+## 💾 Banco de Dados
+
+A conexão com o banco de dados é feita por meio de uma URL externa, como por exemplo:
+
+```java
+String url = "jdbc:postgresql://<host>:<porta>/<database>";
+String usuario = "<usuario>";
+String senha = "<senha>";
